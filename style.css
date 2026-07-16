@@ -1,0 +1,317 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#312e81,#5b21b6);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    padding:20px;
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* Glass Card */
+
+.container{
+
+    width:100%;
+    max-width:650px;
+
+    padding:50px 40px;
+
+    text-align:center;
+
+    color:white;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+    animation:popup .8s ease;
+
+}
+
+/* Card Animation */
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+h1{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+
+}
+
+p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:#f2f2f2;
+
+    margin:15px 0;
+
+}
+
+button{
+
+    margin-top:30px;
+
+    padding:16px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:white;
+
+    background:linear-gradient(45deg,#ff4d6d,#ff9800);
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(255,120,120,.5);
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .container{
+
+        padding:35px 25px;
+
+    }
+
+    h1{
+
+        font-size:2rem;
+
+    }
+
+    p{
+
+        font-size:1rem;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+}
+/* Floating Emojis */
+
+.emoji{
+    position:fixed;
+    bottom:-60px;
+    font-size:35px;
+    animation:floatUp linear infinite;
+    pointer-events:none;
+}
+
+/* Different positions */
+
+.emoji:nth-child(1){
+    left:10%;
+    animation-duration:9s;
+}
+
+.emoji:nth-child(2){
+    left:30%;
+    animation-duration:12s;
+}
+
+.emoji:nth-child(3){
+    left:50%;
+    animation-duration:10s;
+}
+
+.emoji:nth-child(4){
+    left:70%;
+    animation-duration:11s;
+}
+
+.emoji:nth-child(5){
+    left:90%;
+    animation-duration:8s;
+}
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+/* Stars */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:40px 40px;
+
+    opacity:.25;
+
+    animation:twinkle 3s infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.15;
+    }
+
+    to{
+        opacity:.4;
+    }
+
+}
+/* Countdown */
+
+#countdown h1{
+
+    font-size:6rem;
+
+    color:white;
+
+    animation:pulse 1s infinite;
+
+}
+
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.3);
+
+    }
+
+}
+
+
+/* Hidden Content Animation */
+
+#content{
+
+    animation:fadeIn 1s ease;
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
